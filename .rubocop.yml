@@ -1,0 +1,23 @@
+require: rubocop-rspec
+
+Rails:
+  Enabled: true
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - vendor/**/*
+    - Rakefile
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/LineLength:
+  Max: 120
+  IgnoreCopDirectives: true
