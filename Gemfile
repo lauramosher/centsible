@@ -23,6 +23,7 @@ gem "sass-rails"
 gem "uglifier"
 
 gem "bcrypt"
+gem "react-rails"
 gem "turbolinks"
 
 group :development, :test do
