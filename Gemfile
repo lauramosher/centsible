@@ -23,9 +23,7 @@ gem "sass-rails"
 gem "uglifier"
 
 gem "bcrypt"
-gem "react-rails"
 gem "turbolinks"
-gem "webpacker"
 
 group :development, :test do
   gem "capybara"
