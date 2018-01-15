@@ -24,6 +24,7 @@ gem "uglifier"
 
 gem "bcrypt"
 gem "react-rails"
+gem "sprig"
 gem "turbolinks"
 
 group :development, :test do
