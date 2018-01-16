@@ -7,7 +7,6 @@ class CategoriesTable extends React.Component {
       budgetError: null
     };
     this.handleAddCategory = this.handleAddCategory.bind(this);
-    this.updateState = this.updateState.bind(this);
   }
 
   updateState(category) {
@@ -28,7 +27,6 @@ class CategoriesTable extends React.Component {
     event.preventDefault();
     var data = {};
     var formData = new FormData(event.target);
-    var success = false;
 
     formData.forEach(function(value, key) {
       data[key] = value;
@@ -40,17 +38,9 @@ class CategoriesTable extends React.Component {
       headers: new Headers({
         'Content-Type': 'application/json'
       })
-    }).then(
-      function(response) {
-        if (response.statusText === "OK") {
-          success = true;
-        }
-        return response.json();
-      }
-    ).then(
-      data => { this.updateState(data); }
-    )
-
+    })
+    .then(response => { return response.json(); })
+    .then(data => { this.updateState(data); })
   }
 
   render() {
