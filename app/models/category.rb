@@ -3,4 +3,6 @@
 class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :deleted_at }
   validates :budget, presence: true, numericality: { greater_than_or_equal_to: 0 }
+
+  scope :active, -> { where(deleted_at: nil) }
 end

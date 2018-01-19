@@ -19,7 +19,7 @@ function CategoriesTable(props) {
             <tr key={i}>
               <td>{category.name}</td>
               <td>{category.budget}</td>
-              <td></td>
+              <td><button onClick={props.handleRemove} data-category-id={category.id}>remove</button></td>
             </tr>
           )
         }
