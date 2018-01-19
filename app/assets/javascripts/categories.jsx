@@ -16,6 +16,7 @@ class Categories extends React.Component {
       this.setState({categories: categories});
 
       document.querySelector("form#addCategoryForm").reset();
+      document.querySelector("form#addCategoryForm span").innerHTML = "";
       document.querySelector("#addCategoryForm input:first-child").focus();
     } else {
       var messages = category['messages'];
