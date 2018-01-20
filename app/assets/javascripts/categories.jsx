@@ -10,11 +10,6 @@ class Categories extends React.Component {
     this.handleRemoveCategory = this.handleRemoveCategory.bind(this);
   }
 
-  // TODO: Refactor out of this class for prime reusability
-  resetForm(formSelector) {
-    document.querySelector(formSelector).reset();
-  }
-
   handleAddCategoryResponse(data) {
     if (data['category']) {
       var categories = this.state.categories.slice();
@@ -26,7 +21,7 @@ class Categories extends React.Component {
         budgetError: null
       });
 
-      this.resetForm("form#addCategoryForm");
+      resetForm("form#addCategoryForm");
     } else {
       var messages = data['messages'];
       this.setState({
