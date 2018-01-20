@@ -10,23 +10,29 @@ class Categories extends React.Component {
     this.handleRemoveCategory = this.handleRemoveCategory.bind(this);
   }
 
-  updateState(category, method) {
-    // TODO REFACTOR ME
-    if (category['category']) {
-      var categories = this.state.categories.slice();
-      if (method === "post") {
-        categories.push(category['category']);
+  // TODO: Refactor out of this class for prime reusability
+  resetForm(formSelector) {
+    document.querySelector(formSelector).reset();
+  }
 
-        document.querySelector("form#addCategoryForm").reset();
-        document.querySelector("form#addCategoryForm span").innerHTML = "";
-        document.querySelector("#addCategoryForm input:first-child").focus();
-      } else {
-        categories = categories.filter(cat => { return cat.name !==  category['category']['name'] })
-      }
-      this.setState({categories: categories});
+  handleAddCategoryResponse(data) {
+    if (data['category']) {
+      var categories = this.state.categories.slice();
+      categories.push(data['category']);
+
+      this.setState({
+        categories: categories,
+        nameError: null,
+        budgetError: null
+      });
+
+      this.resetForm("form#addCategoryForm");
     } else {
-      var messages = category['messages'];
-      this.setState({nameError: messages['name'], budgetError: messages['budget']});
+      var messages = data['messages'];
+      this.setState({
+        nameError: messages['name'],
+        budgetError: messages['budget']
+      });
     }
   }
 
@@ -47,7 +53,17 @@ class Categories extends React.Component {
       })
     })
     .then(response => { return response.json(); })
-    .then(data => { this.updateState(data, 'post'); })
+    .then(data => { this.handleAddCategoryResponse(data); })
+  }
+
+  handleRemoveCategoryResponse(data) {
+    var categories = this.state.categories.slice();
+    categories = categories.filter(c => c.name !==  data['category']['name']);
+    this.setState({
+      categories: categories,
+      nameError: null,
+      budgetError: null
+    });
   }
 
   handleRemoveCategory(event) {
@@ -56,7 +72,7 @@ class Categories extends React.Component {
       method: "DELETE"
     })
     .then(response => { return response.json(); })
-    .then(data => { this.updateState(data, 'delete'); })
+    .then(data => { this.handleRemoveCategoryResponse(data); })
   }
 
   render() {
