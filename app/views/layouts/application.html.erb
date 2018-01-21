@@ -8,7 +8,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body data-controller="<%= controller_name %>">
+    <main>
+      <aside role="sidebar">
+        <header>
+          <h1>
+            <%= link_to root_path do %>
+              &cent;entsible
+              <span>budget</span>
+            <% end %>
+          </h1>
+        </header>
+        <nav role="nav">
+          <%#= link_to "Transactions", "#" %>
+          <%#= link_to "Timeline", "#" %>
+          <header>Settings</header>
+          <%= link_to "Spending Categories", categories_path, class: "#{'active' if request.path == '/categories' }" %>
+          <%#= link_to "Notifications", "#" %>
+        </nav>
+      </aside>
+      <%= yield %>
+    </main>
   </body>
 </html>
