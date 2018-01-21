@@ -10,8 +10,8 @@ function NewCategoryForm(props) {
         <tbody>
           <tr>
             <td><input type="text" name="name" /><span>{props.nameError}</span></td>
-            <td><input type="number" name="budget" min="0" /><span>{props.budgetError}</span></td>
-            <td><input type="submit" value="Add" /></td>
+            <td><input type="number" name="budget" min="0" step="0.01" /><span>{props.budgetError}</span></td>
+            <td><input type="submit" value="+" /></td>
           </tr>
         </tbody>
       </table>

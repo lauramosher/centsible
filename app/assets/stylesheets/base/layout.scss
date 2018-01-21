@@ -1,0 +1,34 @@
+main {
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+
+  aside {
+    background-color: #2e2e2e;
+    color: #fefefe;
+    flex-basis: 250px;
+    flex-shrink: 0;
+
+    header {
+      padding-left: 1em;
+
+      h1 {
+        a {
+          color: #85bb65;
+          text-decoration: none;
+        }
+
+        span {
+          font-size: small;
+        }
+      }
+    }
+  }
+
+  > section {
+    border: 1px solid gray;
+    flex-grow: 1;
+    padding: 0.5em;
+    overflow-y: scroll;
+  }
+}

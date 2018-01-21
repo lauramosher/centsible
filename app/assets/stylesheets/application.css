@@ -14,4 +14,7 @@
  */
 
 @import "base";
+@import "base/layout";
+
 @import "components/category-table";
+@import "components/nav";

@@ -18,8 +18,8 @@ function CategoriesTable(props) {
           props.categories.map((category, i) =>
             <tr key={i}>
               <td>{category.name}</td>
-              <td>{category.budget}</td>
-              <td><button onClick={props.handleRemove} data-category-id={category.id}>remove</button></td>
+              <td>{category.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
+              <td><button className="danger" onClick={props.handleRemove} data-category-id={category.id}>x</button></td>
             </tr>
           )
         }
