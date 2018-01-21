@@ -9,11 +9,24 @@
   </head>
 
   <body data-controller="<%= controller_name %>">
+    <% if alert %>
+      <p class="notice error" data-dismiss>
+        <%= alert %>
+        <span onclick="dismiss()">&times;</span>
+      </p>
+    <% end %>
+    <% if notice %>
+      <p class="notice info" data-dismiss>
+        <%= notice %>
+        <span onclick="dismiss()">&times;</span>
+      </p>
+    <% end %>
+
     <main>
       <aside role="sidebar">
         <header>
           <h1>
-            <%= link_to root_path do %>
+            <%= link_to dashboard_path do %>
               &cent;entsible
               <span>budget</span>
             <% end %>
@@ -25,6 +38,11 @@
           <header>Settings</header>
           <%= link_to "Spending Categories", categories_path, class: "#{'active' if request.path == '/categories' }" %>
           <%#= link_to "Notifications", "#" %>
+
+          <%# this absolutely needs to be at the bottom to style correctly %>
+          <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+          <% end %>
         </nav>
       </aside>
       <%= yield %>

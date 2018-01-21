@@ -1,0 +1,38 @@
+[data-controller="home"] {
+  header {
+    background-color: #2e2e2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        color: #fefefe;
+        display: block;
+        text-decoration: none;
+        padding: 2em 1em;
+
+        &:hover {
+          background-color: #3d3d3d;
+        }
+      }
+    }
+
+    h1 {
+      margin-left: 1em;
+
+      a {
+        color: #85bb65;
+        text-decoration: none;
+      }
+
+      span {
+        font-size: small;
+      }
+    }
+  }
+}

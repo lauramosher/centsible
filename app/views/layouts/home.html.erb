@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Centsible</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-controller="<%= controller_name %>">
+    <% if alert %>
+      <p class="notice error" data-dismiss>
+        <%= alert %>
+        <span onclick="dismiss()">&times;</span>
+      </p>
+    <% end %>
+    <% if notice %>
+      <p class="notice info" data-dismiss>
+        <%= notice %>
+        <span onclick="dismiss()">&times;</span>
+      </p>
+    <% end %>
+
+    <header>
+      <h1>
+        <%= link_to root_path do %>
+          &cent;entsible
+          <span>budget</span>
+        <% end %>
+      </h1>
+      <nav>
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
