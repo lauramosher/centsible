@@ -1,0 +1,59 @@
+[data-controller="registrations"] {
+  h3 {
+    border-bottom: 1px solid #a9a9a9;
+
+    &.danger-zone {
+      color: #c00000;
+      text-transform: uppercase;
+    }
+  }
+
+  form {
+    .devise-errors {
+      background-color: lighten(#c00000, 50%);
+      border: 1px solid #c00000;
+      border-radius: 5px;
+      padding: 10px;
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .meta {
+      font-size: 0.8em;
+      font-style: italic;
+      color: lighten(#2e2e2e, 15%);
+
+      &.error {
+        color: #c00000;
+      }
+    }
+
+    .field_with_errors {
+      color: #c00000;
+
+      input {
+        box-shadow: 0 0 3px #c00000;
+      }
+    }
+
+    label {
+      display: block;
+    }
+
+    input {
+      &:not([type="submit"]) {
+        width: calc(500px - 20px);
+      }
+
+      &[type="checkbox"] {
+        width: inherit;
+      }
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+  }
+}

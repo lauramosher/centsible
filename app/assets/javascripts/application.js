@@ -19,5 +19,4 @@
 
 function dismiss() {
   document.querySelector("[data-dismiss]").remove();
-
 }
