@@ -1,0 +1,15 @@
+dl {
+  display: flex;
+  flex-flow: row wrap;
+  width: 450px;
+}
+
+dt {
+  width: 150px;
+  margin: 0.5em auto;
+}
+
+dd {
+  width: 300px;
+  margin: auto;
+}

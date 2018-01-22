@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Centsible</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-controller="<%= controller_name %>">
+    <main>
+      <header>
+        <h1>
+          <%= link_to root_path do %>
+            &cent;entsible
+            <span>budget</span>
+          <% end %>
+        </h1>
+      </header>
+      <section>
+        <% if alert %>
+          <p class="error"><%= alert %></p>
+        <% end %>
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+
+        <%= yield %>
+      </section>
+    </main>
+  </body>
+</html>

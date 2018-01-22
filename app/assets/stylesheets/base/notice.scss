@@ -1,0 +1,29 @@
+.notice {
+  background-color: lightgray;
+  border-radius: 0 0 10px 10px;
+  color: #FFFFFF;
+  left: 0;
+  margin: 0 auto;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 600px;
+
+  span {
+    position: absolute;
+    font-size: 20px;
+    top: 0.5em;
+    right: 0.5em;
+
+    cursor: pointer;
+  }
+
+  &.info {
+    background: linear-gradient(#116ebf, darken(#116ebf, 10%));
+  }
+
+  &.error {
+    background: linear-gradient(#c00000, darken(#c00000, 10%));
+  }
+}

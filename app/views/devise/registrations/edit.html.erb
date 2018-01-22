@@ -1,0 +1,73 @@
+<section>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <% if f.object.errors.any? %>
+      <div class="devise-errors"><%= devise_error_messages! %></div>
+    <% end %>
+
+    <h3>Update profile</h3>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autocomplete: "off" %>
+    </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autocomplete: "off" %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, autocomplete: "off" %>
+    </div>
+    <div class="field">
+      <%= f.label :currency %>
+      <%= f.text_field :currency, autocomplete: "off" %>
+    </div>
+
+    <h3>Change password</h3>
+    <p>Skip this section if you don't want to change it</p>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off" %>
+      <% if f.object.errors[:password].present? %>
+        <span class="meta error"><%= f.object.errors[:password].first %></span>
+      <% else %>
+        <% if @minimum_password_length %>
+          <br />
+          <em class="meta"><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <span class="meta error"><%= f.object.errors[:password_confirmation].first if f.object.errors[:current_password].present? %></span>
+    </div>
+
+    <h3>Current Password</h3>
+    <p>We need your current password to confirm your changes</p>
+
+    <div class="field">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autocomplete: "off" %>
+      <span class="meta error"><%= f.object.errors[:current_password].first if f.object.errors[:current_password].present? %></span>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update Profile" %>
+    </div>
+  <% end %>
+
+  <h3 class="danger-zone">Delete Account</h3>
+  <p>
+    This will permanently remove your account, and
+    your data will be unrecoverable.
+  </p>
+
+  <p>
+    <%= button_to "Cancel my account", registration_path(resource), class: "danger", data: { confirm: "Are you sure?" }, method: :delete %>
+  </p>
+</section>

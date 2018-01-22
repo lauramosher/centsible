@@ -1,0 +1,63 @@
+body {
+  background-color: #2e2e2e;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, serif;
+}
+
+main {
+  margin: 100px auto 0;
+  width: 300px;
+
+  section {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    padding: 10px;
+  }
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  a {
+    color: #85bb65;
+    span { font-size: small; }
+  }
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+input {
+  width: calc(100% - 20px);
+
+  &[type="submit"] {
+    width: 100%;
+  }
+
+  &[type="checkbox"] {
+    width: inherit;
+  }
+}
+
+.error {
+  color: #c00000;
+  text-align: center;
+}
+
+.notice {
+  color: teal;
+  text-align: center;
+}

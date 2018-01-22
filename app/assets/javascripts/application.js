@@ -16,3 +16,7 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+function dismiss() {
+  document.querySelector("[data-dismiss]").remove();
+}

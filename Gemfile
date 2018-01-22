@@ -23,6 +23,7 @@ gem "sass-rails"
 gem "uglifier"
 
 gem "bcrypt"
+gem "devise"
 gem "react-rails"
 gem "sprig"
 gem "turbolinks"

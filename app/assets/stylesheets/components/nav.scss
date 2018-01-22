@@ -1,4 +1,4 @@
-nav {
+nav[role="nav"] {
   header {
     color: darken(#fefefe, 50%);
     font-size: small;
@@ -9,7 +9,6 @@ nav {
   a {
     color: #fefefe;
     display: block;
-    height: 100%;
     padding: 1em;
     text-decoration: none;
 
@@ -19,6 +18,12 @@ nav {
 
     &:hover {
       background-color: #3d3d3d;
+    }
+
+    &:last-child {
+      position: fixed;
+      width: calc(250px - 2em);
+      bottom: 0;
     }
   }
 }

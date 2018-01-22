@@ -3,7 +3,7 @@ main {
   display: flex;
   align-items: stretch;
 
-  aside {
+  aside[role="sidebar"] {
     background-color: #2e2e2e;
     color: #fefefe;
     flex-basis: 250px;

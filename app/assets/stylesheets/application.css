@@ -14,7 +14,12 @@
  */
 
 @import "base";
+@import "base/buttons";
+@import "base/notice";
 @import "base/layout";
+@import "base/home";
 
 @import "components/category-table";
+@import "components/definition-list";
 @import "components/nav";
+@import "components/profile";
