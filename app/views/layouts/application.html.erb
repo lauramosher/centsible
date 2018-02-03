@@ -34,7 +34,7 @@
         </header>
         <nav role="nav">
           <%= link_to "Dashboard", dashboard_path, class: "#{'active' if request.path == dashboard_path}" %>
-          <%#= link_to "Transactions", "#" %>
+          <%= link_to "Transactions", transactions_path, class: "#{'active' if request.path == '/transactions'}" %>
           <%#= link_to "Timeline", "#" %>
           <header>Settings</header>
           <%= link_to "Spending Categories", categories_path,
