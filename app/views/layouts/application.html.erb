@@ -33,7 +33,7 @@
           </h1>
         </header>
         <nav role="nav">
-          <%= link_to "Dashboard", dashboard_path %>
+          <%= link_to "Dashboard", dashboard_path, class: "#{'active' if request.path == dashboard_path}" %>
           <%#= link_to "Transactions", "#" %>
           <%#= link_to "Timeline", "#" %>
           <header>Settings</header>
