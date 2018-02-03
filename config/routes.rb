@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get "/dashboard", to: "dashboard#index"
   resources :categories
+  resources :transactions, controller: "financial_transactions"
 end
