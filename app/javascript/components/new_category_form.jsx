@@ -1,4 +1,6 @@
-function NewCategoryForm(props) {
+import React from "react";
+
+export default function NewCategoryForm(props) {
   return (
     <form id="addCategoryForm" onSubmit={props.handler}>
       <table className="category-table">
@@ -18,4 +20,3 @@ function NewCategoryForm(props) {
     </form>
   )
 }
-

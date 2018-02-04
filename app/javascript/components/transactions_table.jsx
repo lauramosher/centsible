@@ -1,4 +1,6 @@
-function TransactionsTable(props) {
+import React from "react";
+
+export default function TransactionsTable(props) {
   return (
     <table className="transactions-table">
       <thead>

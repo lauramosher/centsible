@@ -12,11 +12,13 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require react
-//= require react_ujs
-//= require components
 //= require_tree .
 
 function dismiss() {
   document.querySelector("[data-dismiss]").remove();
+}
+
+function resetForm(formSelector) {
+  document.querySelector(formSelector).reset();
+  document.querySelector(formSelector + " input:first-child").focus();
 }
