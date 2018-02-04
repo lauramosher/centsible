@@ -1,4 +1,6 @@
-function CategoriesTable(props) {
+import React from "react";
+
+export default function CategoriesTable(props) {
   return (
     <table className="category-table">
       <colgroup>

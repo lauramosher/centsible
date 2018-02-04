@@ -1,4 +1,14 @@
-class Categories extends React.Component {
+import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import ReactDom from "react-dom";
+import CategoriesTable from "./categories_table";
+import NewCategoryForm from "./new_category_form";
+
+export default class Categories extends React.Component {
+  static propTypes = {
+    categories: PropTypes.array.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {

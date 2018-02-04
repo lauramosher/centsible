@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  # don't authenticate user on api calls
+  skip_before_action :authenticate_user!, only: [:create, :destroy]
+
   def index
     render locals: {
       categories: Category.active

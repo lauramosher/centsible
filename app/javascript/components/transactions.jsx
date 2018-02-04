@@ -1,4 +1,7 @@
-class Transactions extends React.Component {
+import React from "react";
+import TransactionsTable from "./transactions_table";
+
+export default class Transactions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
