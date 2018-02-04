@@ -27,6 +27,7 @@ gem "devise"
 gem "react-rails"
 gem "sprig"
 gem "turbolinks"
+gem "webpacker"
 
 group :development, :test do
   gem "capybara"
