@@ -17,3 +17,8 @@
 function dismiss() {
   document.querySelector("[data-dismiss]").remove();
 }
+
+function resetForm(formSelector) {
+  document.querySelector(formSelector).reset();
+  document.querySelector(formSelector + " input:first-child").focus();
+}
